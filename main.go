@@ -1,8 +1,7 @@
 package main
 
-import "github.com/MJR0727/plato_mjr/client"
+import "github.com/MJR0727/plato_mjr/cmd"
 
 func main() {
-	// cmd.Execute()
-	client.RunMain()
+	cmd.Execute()
 }
