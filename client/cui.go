@@ -5,8 +5,9 @@ import (
 	"log"
 	"strings"
 
+	"hello/plato_mjr/client/sdk"
+
 	"github.com/CaoYnag/gocui"
-	"github.com/MJR0727/plato_mjr/client/sdk"
 	"github.com/gookit/color"
 )
 

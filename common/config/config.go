@@ -2,11 +2,12 @@ package config
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/spf13/viper"
 )
 
-func initConfig(fullFileName string) {
+func InitConfig(fullFileName string) {
 	viper.SetConfigFile(fullFileName)
 	viper.SetConfigType("yaml")
 	// 读取配置文件
@@ -16,18 +17,18 @@ func initConfig(fullFileName string) {
 	}
 }
 
-func getEndpointsDiscoveryPath() string {
-	return viper.GetString("discovery.endpoints")
+func GetEndpointsDiscoveryPath() []string {
+	return viper.GetStringSlice("discovery.endpoints")
 }
 
-func getEndpointsTimeOut() string {
-	return viper.GetString("discovery.timeout")
+func GtEndpointsTimeOut() time.Duration {
+	return viper.GetDuration("discovery.timeout") * time.Second
 }
 
-func getGlobleEnv() string {
+func GetGlobleEnv() string {
 	return viper.GetString("globle.env")
 }
 
-func getServiceIpDispatcherPath() string {
-	return viper.GetString("ip_config.service_path")
+func GetServiceIpDispatcherPath() string {
+	return viper.GetString("ipconfig.service_path")
 }
