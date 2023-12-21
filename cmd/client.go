@@ -1,14 +1,15 @@
 package cmd
 
 import (
-	"github.com/MJR010727/plato_mjr/client"
+	"hello/plato_mjr/client"
+
 	"github.com/spf13/cobra"
 )
 
 // 客户端cmd
 
 func init() {
-	rootCmd.AddCommand()
+	rootCmd.AddCommand(clientCommand)
 }
 
 var clientCommand = &cobra.Command{

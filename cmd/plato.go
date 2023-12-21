@@ -9,9 +9,18 @@ import (
 
 // plato cmd
 
+var (
+	ConfigPath string
+)
+
 func init() {
 	// 每条命令初始化执行配置。
 	cobra.OnInitialize(initConfig)
+	rootCmd.PersistentFlags().StringVar(
+		&ConfigPath,
+		"config",
+		"./plato.yaml",
+		"config file (default is ./plato.yaml)")
 }
 
 func initConfig() {
